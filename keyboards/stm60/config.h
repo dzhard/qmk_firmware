@@ -26,21 +26,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { B15, A2, B0, B1, B10, B11, B12, B13, B14, B9, B8, B3, B4, B5 }
 
 
-#define BACKLIGHT_PIN           A0
-#define BACKLIGHT_PWM_DRIVER    PWMD2
-#define BACKLIGHT_PWM_CHANNEL   1
+#define BACKLIGHT_PIN           A8
+#define BACKLIGHT_PWM_DRIVER PWMD1
+#define BACKLIGHT_PWM_CHANNEL 1
+#define BACKLIGHT_LEVELS 3
 
-#define RGB_DI_PIN A11
-#define RGBLED_NUM 7
-#define RGBLIGHT_ANIMATIONS
-
-#define ADC_PIN A0
+/*#define RGBLIGHT_ANIMATIONS*/
+#define RGB_DI_PIN A1
+#define RGB_CI_PIN A0
+#define RGBLED_NUM 9
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x6465
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    none
+#define MANUFACTURER    stm60
 #define PRODUCT         stm60
 #define DESCRIPTION     Stm60 keyboard
 
@@ -56,6 +56,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
+
+// #define WS2812_PWM_DRIVER PWMD2  // default: PWMD2
+// #define WS2812_PWM_CHANNEL 2  // default: 2
+// #define WS2812_PWM_PAL_MODE 2  // Pin "alternate function", see the respective datasheet for the appropriate values for your MCU. default: 2
+// #define WS2812_DMA_STREAM STM32_DMA1_STREAM2  // DMA Stream for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_DMA_CHANNEL 2  // DMA Channel for TIMx_UP, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_DMAMUX_ID STM32_DMAMUX1_TIM2_UP // DMAMUX configuration for TIMx_UP -- only required if your MCU has a DMAMUX peripheral, see the respective reference manual for the appropriate values for your MCU.
+// #define WS2812_BYTE_ORDER_RGB
 
 /*
  * Feature disable options
